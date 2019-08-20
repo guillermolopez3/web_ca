@@ -87,7 +87,7 @@ FLECHAS
 	top: 37%;
 	left:0;
 	font-size: 22px;
-	opacity: 1;
+	opacity: 0;
 }
 
 #slide #avanzar{
@@ -96,7 +96,7 @@ FLECHAS
 	padding: 40px 10px 40px 15px;
 	top: 37%;
 	font-size: 22px;
-	opacity: 1;;
+	opacity: 0;
 }
 
 #slide #retroceder:hover, #slide #avanzar:hover{
@@ -188,11 +188,77 @@ ESCRITORIO PEQUEÑO O TABLET VERTICAL (SM revisamos en 768px)
 MOVIL (XS revisamos en 320px)
 =============================================*/
 
-@media (max-width:767px){
+@media (max-width:767px) and (min-width:577){
 
 	/*=============================================
 	TOP
 	=============================================*/
+	.navbar{
+		padding-top: 0;
+	}
+
+	#slide #retroceder, #slide #avanzar{
+		display: none;
+	}
+
+	#slide ul li img {
+	    width: 200%;
+	}
+
+	#slide .texto-slide h1 {
+	    padding: 0px 0px 20px 0px;
+	    text-align: center;
+	    font-size: 1rem;
+	}
+	#slide .btn-contacto {
+	    position: absolute;
+	    bottom: 20%;
+	    left: 40%;
+	}
+
+}
+
+/*=============================================
+MOVIL (XS revisamos en 320px)
+=============================================*/
+
+@media (max-width:576px){
+
+	/*=============================================
+	TOP
+	=============================================*/
+	.navbar{
+		padding-top: 0;
+	}
+
+	#slide #retroceder, #slide #avanzar{
+		display: none;
+	}
+
+	#slide ul li img {
+	    width: 150%;
+	}
+
+	#slide .texto-slide {
+	    position: absolute;
+	    top: 15%;
+	    left: 5%;
+	    right: 5%;
+	}
+
+	#slide .texto-slide h1 {
+	    padding: 0px 0px 20px 0px;
+	    font-size: 1.3rem;
+	}
+	#slide .btn-contacto {
+	    position: absolute;
+	    bottom: 20%;
+	    left: 45%;
+	}
+
+	.btn{
+		padding: .2rem .3rem;
+	}
 
 }
 
