@@ -33,6 +33,10 @@ function animarSegunTamano(){
 		$(tituloSlide[item]).animate({'padding-top': -10 + '%', 'opacity': 0},100);
 		$(tituloSlide[item]).animate({'padding-top': 0 + 'px', 'opacity': 1},600)
 	}
+	else if((windowsWith >= 577) && (windowsWith <= 991)){
+		$(tituloSlide[item]).animate({'padding-top': -20 + '%', 'opacity': 0},100);
+		$(tituloSlide[item]).animate({'padding-top': 0 + 'px', 'opacity': 1},600)	
+	}
 	else{
 		$(tituloSlide[item]).animate({'padding-top': -100 + '%', 'opacity': 0},100);
 		$(tituloSlide[item]).animate({'padding-top': 50 + 'px', 'opacity': 1},1000)

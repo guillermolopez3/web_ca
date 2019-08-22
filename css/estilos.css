@@ -56,6 +56,7 @@ Carrousel
 	text-transform: uppercase;
 	font-family: 'Ubuntu Condensed', sans-serif;
 	opacity:1;
+	color: white;
 }
 
 #slide .texto-slide a{
@@ -67,6 +68,17 @@ Carrousel
 	position: absolute;
 	bottom:20%;
 	left:48%;
+}
+
+#slide .btn-contacto{
+	color: white;
+	background-color: #f28d17;
+	border-color: #f28d17;
+}
+
+#slide .btn-contacto:hover{
+	background-color: #F7B746;
+	border-color: #F7B746;
 }
 
 /*=============================================
@@ -145,6 +157,22 @@ PAGINACIÓN
 	padding:2px;
 }
 
+/*=============================================
+SECCIONES
+=============================================*/
+.secciones{
+	margin-top: 40px;
+}
+.tituloSeccion{
+	font-size: 2.5vw;
+}
+/* Servicios*/
+
+
+
+
+
+
 
 
 /*=============================================
@@ -178,42 +206,94 @@ ESCRITORIO PEQUEÑO O TABLET VERTICAL (SM revisamos en 768px)
 @media (max-width:991px) and (min-width:768px){
 
 	/*=============================================
-	HEADER
+	TOP
 	=============================================*/
+	header #logotipo img {
+	    width: 110%;
+    	margin-top: 12px;
+	}
+
+	.navbar-light .navbar-toggler {
+	    margin-top: 30%;
+	}
+	
+	#slide ul li img {
+	    width: 100%;
+	}
+
+	#slide #avanzar, #slide #retroceder{
+		padding: 15px 8px 15px 8px;
+	}
+
+	#slide .texto-slide {
+	    position: absolute;
+	    top: 15%;
+	    left: 5%;
+	    right: 5%;
+	}
+
+	#slide .texto-slide h1 {
+	    padding: 0px 0px 20px 0px;
+	    font-size: 4vw;
+	}
+	#slide .btn-contacto {
+	    position: absolute;
+	    bottom: 20%;
+	    left: 47%;
+	}
+
+	.btn{
+		padding: .2rem .3rem;
+	}
 
 
 }
 
 /*=============================================
-MOVIL (XS revisamos en 320px)
+MOVIL (Small revisamos en 320px)
 =============================================*/
 
-@media (max-width:767px) and (min-width:577){
+@media (max-width:767px) and (min-width:577px){
 
 	/*=============================================
 	TOP
 	=============================================*/
-	.navbar{
-		padding-top: 0;
+	header #logotipo img {
+	    width: 80%;
+	    padding: 20px;
 	}
 
-	#slide #retroceder, #slide #avanzar{
-		display: none;
+	.navbar-light .navbar-toggler {
+	    margin-top: 30%;
 	}
-
+	
 	#slide ul li img {
-	    width: 200%;
+	    width: 100%;
+	}
+
+	#slide #avanzar, #slide #retroceder{
+		padding: 15px 8px 15px 8px;
+	}
+
+	#slide .texto-slide {
+	    position: absolute;
+	    top: 15%;
+	    left: 5%;
+	    right: 5%;
 	}
 
 	#slide .texto-slide h1 {
 	    padding: 0px 0px 20px 0px;
-	    text-align: center;
-	    font-size: 1rem;
+	    font-size: 4vw;
 	}
 	#slide .btn-contacto {
 	    position: absolute;
 	    bottom: 20%;
-	    left: 40%;
+	    left: 47%;
+	}
+
+	.btn{
+		padding: .2rem .3rem;
 	}
 
 }
@@ -248,7 +328,7 @@ MOVIL (XS revisamos en 320px)
 
 	#slide .texto-slide h1 {
 	    padding: 0px 0px 20px 0px;
-	    font-size: 1.3rem;
+	    font-size: 5vw;
 	}
 	#slide .btn-contacto {
 	    position: absolute;
