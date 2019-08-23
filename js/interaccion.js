@@ -5,6 +5,7 @@ var interrumpirCiclo = false; //variable para que si interactuo con el slide se 
 var tituloSlide = $('#slide h1');
 var detenerIntervalo = false; //cuando el mouse este sobre el slide se detiene la animacion
 var windowsWith;
+var detenerIntervalo = false; //variable para que no se vuelva loco el slide al cambiar de pestaña
 
 
 $(document).ready(function() {
@@ -105,6 +106,8 @@ setInterval(function(){
 	
 	if(interrumpirCiclo){
 		interrumpirCiclo = false;
+		detenerIntervalo = false;
+		$("#slide ul li").finish();
 	}
 	else{
 

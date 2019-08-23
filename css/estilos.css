@@ -160,14 +160,68 @@ PAGINACIÓN
 /*=============================================
 SECCIONES
 =============================================*/
-.secciones{
+
+/* Servicios*/
+#servicios{
 	margin-top: 40px;
 }
 .tituloSeccion{
 	font-size: 2.5vw;
 }
-/* Servicios*/
 
+#servicios .row{
+	margin-top: 60px;
+}
+
+#servicios .icon img{
+	width: 80%;
+	padding: 20px;
+	border-radius: 10%;
+}
+
+#servicios .border-icon{
+	color: #f28d17;
+	border-color: #f28d17;
+	padding: 26px;
+	border-width: 1px 1px 1px 1px;
+	border-radius: 50%;
+}
+
+
+/* Destacados*/
+
+#destacado{
+	margin-top: 40px;
+	background-color: #f5f5f5;
+}
+
+#destacado h2{
+	margin-top: 40px;
+	margin-bottom: 40px;
+	padding: 40px;
+}
+
+#destacado .detalle-destacado h4{
+	font-size: 24px;
+	color: #443f3f;
+	padding: 10px;
+}
+
+#destacado .detalle-destacado span i{
+	font-size: 24px;
+	color: #f28d17;
+	padding: 20px;
+}
+
+#destacado .imagen-producto img{
+	width: 40%;
+	margin-right: 30%;
+}
+
+.padre{
+	display: flex;
+	width: 100%;
+}
 
 
 
