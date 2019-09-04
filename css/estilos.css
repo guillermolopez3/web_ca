@@ -231,11 +231,11 @@ SECCIONES
 	margin: auto;
 	width: 100%;
 	margin-top: 80px;
+	height: 530px;
 }
 
 #slideEmpleados  ul {
 		position: absolute;
-		top: 50%;
 		width: 100%;
 		/*height: 200px; 
 		left: 50%;
@@ -285,7 +285,7 @@ SECCIONES
   transition-delay:1.75s;
 }
 #slideEmpleados ul > li.li3.active {
-  transition-delay:2s;
+  /*transition-delay:2s;*/
 }
 
 #slideEmpleados .active {
@@ -293,17 +293,29 @@ SECCIONES
 }
   
 #slideEmpleados	p {
-		font-family: sans-serif;
-		font-size: 13px;
+	font-family: sans-serif;
+	font-size: 13px;
     color: #646566;
-		line-height: 1.5em;
-	}
+	line-height: 1.5em;
+	margin-bottom: -0.5rem;
+}
 
 #slideEmpleados	strong { 
     font-weight: 700;
 	font-size: 25px; 
-    line-height: 100px; 
-	}
+}
+
+#slideEmpleados #c hr{
+	border-top: 1px solid #f28d17;
+	margin-bottom: 10px;
+	width: 50%;
+}
+#slideEmpleados .datosEmpleado{
+	margin-top: 20px;
+}
+#slideEmpleados .datosEmpleado p{
+	padding: 5px;
+}
 
 /*=============================================
 PAGINACIÓN TEAM
@@ -408,6 +420,14 @@ ESCRITORIO PEQUEÑO O TABLET VERTICAL (SM revisamos en 768px)
 		padding: .2rem .3rem;
 	}
 
+	/* Carrousel empleados*/
+	#slideEmpleados	strong {
+    	font-weight: 700;
+    	font-size: 22px;
+	}
+	.datosEmpleado a{
+		font-size: 14px;
+	}
 
 }
 
