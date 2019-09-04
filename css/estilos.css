@@ -1,6 +1,15 @@
 /*=============================================
 HEADER
 =============================================*/
+h2{
+	font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+h3{
+	font-family: 'Ubuntu Condensed', sans-serif;
+	font-size: 20px;
+}
+
 header #logotipo img{
 	width: 100%;
 	padding: 20px;
@@ -187,6 +196,10 @@ SECCIONES
 	border-radius: 50%;
 }
 
+#servicios .icon-context p{
+	font-size: 14px;
+}
+
 
 /* Destacados*/
 
@@ -202,7 +215,7 @@ SECCIONES
 }
 
 #destacado .detalle-destacado h4{
-	font-size: 24px;
+	font-size: 20px;
 	color: #443f3f;
 	padding: 10px;
 }
@@ -214,8 +227,9 @@ SECCIONES
 }
 
 #destacado .imagen-producto img{
-	width: 40%;
-	margin-right: 30%;
+	width: 30%;
+	margin-right: 40%;
+	margin-top: -30px;
 }
 
 .padre{
@@ -259,6 +273,11 @@ ESCRITORIO PEQUEÑO O TABLET VERTICAL (SM revisamos en 768px)
 
 @media (max-width:991px) and (min-width:768px){
 
+	/* titulos de cada seccion*/
+	.tituloSeccion{
+		font-size: 5vw;
+	}
+
 	/*=============================================
 	TOP
 	=============================================*/
@@ -300,6 +319,13 @@ ESCRITORIO PEQUEÑO O TABLET VERTICAL (SM revisamos en 768px)
 		padding: .2rem .3rem;
 	}
 
+	/*destacado */
+	#destacado .imagen-producto img{
+		width: 25%;
+		margin-right:25%;
+		margin-top: 0;
+	}
+
 
 }
 
@@ -308,6 +334,11 @@ MOVIL (Small revisamos en 320px)
 =============================================*/
 
 @media (max-width:767px) and (min-width:577px){
+
+	/* titulos de cada seccion*/
+	.tituloSeccion{
+		font-size: 4.5vw;
+	}
 
 	/*=============================================
 	TOP
@@ -350,6 +381,60 @@ MOVIL (Small revisamos en 320px)
 		padding: .2rem .3rem;
 	}
 
+	/* SERVICIOS*/
+	#servicios{
+		margin-top: 50px;
+	}
+
+	#servicios .row{
+		margin-top: 30px;
+	}
+
+	#servicios .icon img{
+		width: 50%;
+		padding: 20px;
+		border-radius: 15%;
+	}
+
+	#servicios .border-icon{
+		color: #f28d17;
+		border-color: #f28d17;
+		padding: 26px;
+		border-width: 1px 1px 1px 1px;
+		border-radius: 50%;
+	}
+
+	#servicios .icon-context p{
+		font-size: 14px;
+	}
+
+	/* Destacado */
+	#destacado h2{
+		margin-bottom: 0;
+	}
+	#destacado .detalle-destacado h4{
+		font-size: 16px;
+		color: #443f3f;
+		padding: 10px;
+	}
+
+	#destacado .detalle-destacado span i{
+		font-size: 18px;
+		color: #f28d17;
+		padding: 14px;
+	}
+
+	#destacado .imagen-producto img{
+		width: 30%;
+		margin-right:30%;
+		margin-top: 0;
+	}
+
+	.padre{
+		display: flex;
+		width: 100%;
+	}
+
 }
 
 /*=============================================
@@ -357,6 +442,11 @@ MOVIL (XS revisamos en 320px)
 =============================================*/
 
 @media (max-width:576px){
+
+	/* titulos de cada seccion*/
+	.tituloSeccion{
+		font-size: 7vw;
+	}
 
 	/*=============================================
 	TOP
@@ -393,6 +483,61 @@ MOVIL (XS revisamos en 320px)
 	.btn{
 		padding: .2rem .3rem;
 	}
+
+	/* SERVICIOS*/
+	#servicios{
+	margin-top: 30px;
+	}
+
+	#servicios .row{
+		margin-top: 30px;
+	}
+
+	#servicios .icon img{
+		width: 50%;
+		padding: 20px;
+		border-radius: 15%;
+	}
+
+	#servicios .border-icon{
+		color: #f28d17;
+		border-color: #f28d17;
+		padding: 26px;
+		border-width: 1px 1px 1px 1px;
+		border-radius: 50%;
+	}
+
+	#servicios .icon-context p{
+		font-size: 14px;
+	}
+
+	/* Destacado */
+	#destacado h2{
+		margin-bottom: 0;
+	}
+	#destacado .detalle-destacado h4{
+		font-size: 16px;
+		color: #443f3f;
+		padding: 10px;
+	}
+
+	#destacado .detalle-destacado span i{
+		font-size: 18px;
+		color: #f28d17;
+		padding: 14px;
+	}
+
+	#destacado .imagen-producto img{
+		width: 30%;
+		margin-right:30%;
+		margin-top: 0;
+	}
+
+	.padre{
+		display: flex;
+		width: 100%;
+	}
+
 
 }
 
