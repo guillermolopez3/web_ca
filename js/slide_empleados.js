@@ -1,63 +1,45 @@
 // Init vars.
-var timer = 6000;
-var i = 0;
 var $lis = $('#c > li'); //obtengo los li de las imagenes
 var max = $lis.length; //maximo de li
 var itemEmpleado = 0; //cantidad de bolitas
 var itemPaginacion = $('#paginacionTeam li') //obtengo las bolitas de paginacion
-var cantImgMostrar = 0; 
 
-var tamanoPantalla='';
 
+var tamanoPantalla=''; //String con el tamaño de la pantalla segun resolucion
+
+
+console.log($lis.length)
 //Inicio atributos
 
 //me fijo el tamaño de la pantalla al cargar la pagina
 $(document).ready(function() {
-  var nro_img=0
-  console.log('tamaño pantalla');
-
-  windowsWith = $(window).width(); //tamaño pantalla
-  
-  if(windowsWith>=768){
-    nro_img=3;
-    tamanoPantalla = 'grande'
-  }
-  else if((windowsWith < 768) && (windowsWith >= 576) ){
-    nro_img=2;
-    tamanoPantalla = 'mediana'
-  }
-  //muestro 1 imagen
-  else if (windowsWith < 576){
-    nro_img=1;
-    tamanoPantalla = 'chica'
-  }
-  agregarAttrLi(nro_img);
+  iniciarValores();
 });
 
 //metodo para cuando la pantalla se redimesiona
 $(window).resize(function(){
+  iniciarValores()
+  cantImgAMostrarSeguntamano()
+})
+
+function iniciarValores()
+{
   var ancho=$(window).width();
 
   if(ancho>=768){
-    agregarAttrLi(3)
-    tamanoGrande()
+    agregarAttrLi(3) //muestro 3 imagenes
     tamanoPantalla = 'grande'
   }
   else if((ancho < 768) && (ancho >= 576) ){
-    agregarAttrLi(2)
-    tamanoMediano()
+    agregarAttrLi(2) //muestro 2 imagenes
     tamanoPantalla = 'mediana'
   }
-  //muestro 1 imagen
   else if (ancho < 576){
-    agregarAttrLi(1)
-    tamanoChico()
+    agregarAttrLi(1) //muestro 1 imagen
     tamanoPantalla = 'chica'
   }
   agregarBolitas();
-})
-
-
+}
 
 //recorro el array y le voy agregando las propiedades li0, li1...
 function agregarAttrLi(valor){
@@ -69,34 +51,17 @@ function agregarAttrLi(valor){
   }
 }
 
-
-/*for (var j=0; j<3; j++) {
-  $lis[j].classList.add('active');
-}
-for (var j=0; j<max; j++) {
-  $lis[j].classList.add('li'+(j%3));
-}*/
-
-console.log($lis);
-
-
 //cambiando atributos dependiendo la resolución
-//mayor igual a 768 a muestro 3 imagenes 
-function tamanoGrande(){
-  animarSlide(0,3)
+function cantImgAMostrarSeguntamano(){
+  console.log(tamanoPantalla)
+  if(tamanoPantalla==='grande'){
+    animarSlide(0,3)
+  }else if(tamanoPantalla==='mediana'){
+    animarSlide(0,2)
+  }else if(tamanoPantalla === 'chica'){
+    animarSlide(0,1)
+  }
 }
-
-//menor a 768 y mayor a 576, muestro 2 imagenes
-function tamanoMediano(){
-  animarSlide(0,2)
-}
-
-//menor a 576, muestro 1 imagen
-function tamanoChico(){
-  animarSlide(0,1)
-}
-
-
 
 //evento click de las bolitas de paginación
 
@@ -108,12 +73,35 @@ $('#paginacionTeam li').click(function(){
     //si presiono la primera bolita
     if(itemEmpleado==0)
     {
-      animarSlide(0,3);
+      if(tamanoPantalla==='grande'){
+        animarSlide(0,3)
+      }else if(tamanoPantalla==='mediana'){
+        animarSlide(0,2)
+      }else if(tamanoPantalla === 'chica'){
+        animarSlide(0,1)
+      }
     }
-
-    if(itemEmpleado==1){
-      animarSlide(3,5);
+    else if(itemEmpleado==1){
+      if(tamanoPantalla==='grande'){
+        animarSlide(3,5)
+      }else if(tamanoPantalla==='mediana'){
+        animarSlide(2,4)
+      }else if(tamanoPantalla === 'chica'){
+        animarSlide(1,2)
+      }
     }
+    else if(itemEmpleado==2){
+      if(tamanoPantalla==='mediana'){
+        animarSlide(4,6)
+      }else if(tamanoPantalla === 'chica'){
+        animarSlide(2,3)
+      }
+    }else if(itemEmpleado==3){
+      animarSlide(3,4)
+    }else if(itemEmpleado==4){
+      animarSlide(4,5)
+    }
+    
 
 });
 
@@ -121,39 +109,32 @@ $('#paginacionTeam li').click(function(){
 function animarSlide(minArray,maxArray){
   $(itemPaginacion[itemEmpleado]).css({'opacity': 1}) //pongo esa bolita con opacidad 1
   $lis.removeClass('active'); //remuevo todas las propiedades de clase active al array de li
+
   for (var j=minArray; j<maxArray; j++) {
     $lis[j].classList.add('active');
   } 
 }
+  
 
 
+//dependiendo el tamaño de la pantalla son la cantidad de bolitas a mostrar. Dependiendo la cantidad de imagenes
+// es la cantidad de li que tengo que agregar y bolitas a mostrar
 function agregarBolitas(){
-
-   
-}
-
- 
-
- // Init classes.
-/*for (var j=0; j<3; j++) {
-  $lis[j].classList.add('active');
-}
-for (var j=0; j<max; j++) {
-  $lis[j].classList.add('li'+(j%3));
-}
-
-// Run timer.
-setInterval(function(){ 
-
-  // Hide everything
-  $lis.removeClass('active');
-
-  // Show the next four.
-  for (var j=i; j<i+3; j++) {
-    $lis[j].classList.add('active');
+  var cantBolitas = 0;
+  if(tamanoPantalla==='grande'){
+    cantBolitas = 2;
+  }else if(tamanoPantalla==='mediana'){
+    cantBolitas = 3
+  }else if(tamanoPantalla === 'chica'){
+    cantBolitas = 5
   }
 
-  // Advance iterator.
-  i = (i < max-3) ? i+3 : 0
+  for(var i=0; i<itemPaginacion.length;i++){
+    if (i <= cantBolitas-1) {
+      itemPaginacion[i].classList.remove('d-none')  
+    }else{
+      itemPaginacion[i].classList.add('d-none') //le agrego la clase para que no se vea  
+    }      
+  }
 
-}, timer); */
+}
