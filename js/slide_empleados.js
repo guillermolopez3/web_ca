@@ -7,6 +7,8 @@ var itemPaginacion = $('#paginacionTeam li') //obtengo las bolitas de paginacion
 
 var tamanoPantalla=''; //String con el tamaño de la pantalla segun resolucion
 
+var minLiActive = 0 //min li img visible
+var maxLiActive = 0 //ultimo li de las img visibles
 
 console.log($lis.length)
 //Inicio atributos
@@ -49,6 +51,7 @@ function agregarAttrLi(valor){
   for (var j=0; j<max; j++) {
     $lis[j].classList.add('li'+(j%valor));
   }
+  maxLiActive = valor;
 }
 
 //cambiando atributos dependiendo la resolución
@@ -105,14 +108,34 @@ $('#paginacionTeam li').click(function(){
 
 });
 
+console.log($lis)
 //minArray: desde donde empiezo a poner el active, maxArray: hasta q li pongo active
 function animarSlide(minArray,maxArray){
   $(itemPaginacion[itemEmpleado]).css({'opacity': 1}) //pongo esa bolita con opacidad 1
   $lis.removeClass('active'); //remuevo todas las propiedades de clase active al array de li
 
-  for (var j=minArray; j<maxArray; j++) {
+  /*for (var j=minArray; j<maxArray; j++) {
     $lis[j].classList.add('active');
-  } 
+  }*/ 
+
+  for (var j=minLiActive; j<maxLiActive; j++) {
+    $lis[j].classList.add('active');
+  }
+
+  var max = 0;
+  var cont = 0;
+  for(var i=0; i<$lis.length;i++){
+    if($lis[i].classList.contains('active'))
+    {
+      max = i 
+      cont++
+      //console.log('clase con active:' + i)
+    }
+  }
+  console.log('min: ' + (max +1 - cont) + ', max:' + max)
+  maxLiActive = (max + 1)
+  minLiActive = (maxLiActive - cont)
+  console.log('minLi: ' + minLiActive + ', maxLi:' + maxLiActive)
 }
   
 
