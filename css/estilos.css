@@ -64,6 +64,7 @@ Carrousel
 	text-align: center;
 	text-transform: uppercase;
 	font-family: 'Ubuntu Condensed', sans-serif;
+	font-weight: 600;
 	opacity:1;
 	color: white;
 }
@@ -237,7 +238,35 @@ SECCIONES
 	width: 100%;
 }
 
+/* Nsotros */
 
+#nosotros img{
+	width: 70%;
+}
+
+
+
+#nosotros p{
+	font-family: 'Ubuntu Condensed', sans-serif;
+	line-height: 30px;
+	font-size: 18px;
+}
+
+
+/*Footer*/
+footer{
+	background-color: #252525;
+	margin-top: 40px;
+	padding: 20px;
+}
+footer h3{
+	color: #f28d17;
+	font-family: 'Ubuntu Condensed', sans-serif; 
+}
+footer p{
+	color: white;
+	font-family: 'Ubuntu Condensed', sans-serif;
+}
 
 /*=============================================
 ESCRITORIO GRANDE (LG revisamos en 1366px en adelante)
